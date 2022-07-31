@@ -29,19 +29,6 @@ async function connect() {
    ).innerHTML = `Wallet address: ${address}`
 }
 var ID = 0
-var currentdate = new Date()
-var datetime =
-   currentdate.getDate() +
-   "/" +
-   (currentdate.getMonth() + 1) +
-   "/" +
-   currentdate.getFullYear() +
-   " @ " +
-   currentdate.getHours() +
-   ":" +
-   currentdate.getMinutes() +
-   ":" +
-   currentdate.getSeconds()
 
 function refreshTime() {
    const timeDisplay = document.getElementById("time")
@@ -56,6 +43,8 @@ async function store() {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const signer = provider.getSigner()
       const contract = new ethers.Contract(contractAddress, abi, signer)
+      let currentdate = new Date().toLocaleString()
+      const datetime = currentdate.replace(", ", " - ")
 
       let dataInput = document.getElementById("dataInput").value
       console.log(datetime, dataInput)
