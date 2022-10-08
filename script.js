@@ -18,7 +18,7 @@ async function connect() {
    })
    await window.ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x4" }], // chainId must be in hexadecimal numbers
+      params: [{ chainId: "0x5" }], // chainId must be in hexadecimal numbers
    })
 
    const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -52,7 +52,7 @@ async function store() {
       await listenTransactionMine(transactionResponse, provider)
       console.log("Done!")
       //Update table
-      const valueUpdate = `<tr><th scope=row>${ID}</th><td>${datetime}</td><td>${dataInput}</td><td><a target=blank href=https://rinkeby.etherscan.io/tx/${transactionResponse.hash} >View in Blockscan</a></td></tr>`
+      const valueUpdate = `<tr><th scope=row>${ID}</th><td>${datetime}</td><td>${dataInput}</td><td><a target=blank href=https://goerli.etherscan.io/tx/${transactionResponse.hash} >View in Blockscan</a></td></tr>`
       document.getElementById("lastUpdate").innerHTML += valueUpdate
       ID++
    }

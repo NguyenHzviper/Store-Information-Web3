@@ -1,4 +1,4 @@
-export const contractAddress = "0x7937B3119CFb40F8cef57a991897576f5579B3Dc"
+export const contractAddress = "0xA4C67B2dCa41703F9A061CF3e851451941993b0C"
 
 export const abi = [
    {
@@ -33,6 +33,19 @@ export const abi = [
          },
       ],
       name: "addStraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+   },
+   {
+      inputs: [
+         {
+            internalType: "uint256",
+            name: "_favoriteNumber",
+            type: "uint256",
+         },
+      ],
+      name: "store",
       outputs: [],
       stateMutability: "nonpayable",
       type: "function",
@@ -101,19 +114,6 @@ export const abi = [
          },
       ],
       stateMutability: "view",
-      type: "function",
-   },
-   {
-      inputs: [
-         {
-            internalType: "uint256",
-            name: "_favoriteNumber",
-            type: "uint256",
-         },
-      ],
-      name: "store",
-      outputs: [],
-      stateMutability: "nonpayable",
       type: "function",
    },
 ]
